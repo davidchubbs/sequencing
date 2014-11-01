@@ -3,8 +3,7 @@ module.exports = function () {
   var errHandler = null;
 
   /**
-   * Subscribe middleware fn to middleware pipeline,
-   * which happens to be a linked list.
+   * Subscribe middleware fn to `middleware` linked list.
    *
    * @function use
    * @param {function} middleware
@@ -61,7 +60,7 @@ module.exports = function () {
     if (err) {
       errHandler(err, output);
     } else if (cb) {
-      cb(output, next.bind(cb.next));
+      cb(output, next.bind(null, cb.next));
     }
   }
 

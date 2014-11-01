@@ -45,6 +45,10 @@ describe('Sequencing', function () {
   });
 
   describe('#useOnError', function () {
+    it('should throw if not given a function', function () {
+      seq().useOnError.should.throw();
+    });
+
     it('should invoke error handler when error is provided to #next', function () {
       var test = seq();
       var context = {count:0};
