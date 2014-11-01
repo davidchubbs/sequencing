@@ -1,0 +1,42 @@
+{
+  "name": "sequencing",
+  "version": "0.1.0",
+  "description": "Generic middleware pattern for sequential operations.",
+  "keywords": [
+    "middleware",
+    "sequence",
+    "design patterns",
+    "express",
+    "connect"
+  ],
+  "author": {
+    "name": "David Chubbs",
+    "email": "davidchubbuck@gmail.com",
+    "url": "https://github.com/davidchubbs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/davidchubbs/sequencing.git"
+  },
+  "bugs": {
+    "url": "https://github.com/davidchubbs/sequencing/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/MIT"
+    }
+  ],
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.9",
+    "gulp-mocha": "^1.1.0",
+    "should": "~4.0"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  }
+}
