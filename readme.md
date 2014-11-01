@@ -1,7 +1,15 @@
 Sequencing
 ==========
 
-Sequencing is a generic middleware pattern for sequential operations. Examples:
+Sequencing is a generic middleware pattern for sequential operations.
+
+### Install
+
+```bash
+npm install sequencing
+```
+
+### Example
 
 ```js
 var seq = require('sequencing')();
