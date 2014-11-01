@@ -13,12 +13,12 @@ seq.use(function (context, next) {
 
 seq.use(function (context, next) {
   console.log(context);         // {name: 'Jacob'}
-  next(new Error('uh oh'), {name: 'Jackson'});  // set error
+  next(new Error('uh oh'), context);  // set error
 });
 
 seq.useOnError(function (err, context) {
   console.log(err);       // [Error: uh oh]
-  console.log(context);   // {name: 'Jackson'}
+  console.log(context);   // {name: 'Jacob'}
 });
 
 seq.fire({ name: 'Julie' });
