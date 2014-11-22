@@ -1,6 +1,6 @@
 {
   "name": "sequencing",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Generic middleware pattern for sequential operations.",
   "keywords": [
     "middleware",
