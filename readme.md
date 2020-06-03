@@ -6,28 +6,34 @@ Sequencing is a generic middleware pattern for sequential operations.
 ### Install
 
 ```bash
-npm install sequencing
+npm i sequencing
 ```
 
 ### Example
 
 ```js
-var seq = require('sequencing')();
+const createSeq = require('sequencing')
 
-seq.use(function (context, next) {
-  console.log(context);         // {name: 'Julie'}
-  next(null, {name: 'Jacob'});  // can change the context of the next middleware
-});
+const seq = createSeq()
 
-seq.use(function (context, next) {
-  console.log(context);         // {name: 'Jacob'}
-  next(new Error('uh oh'), context);  // set error
-});
+// set up middleware logic
 
-seq.useOnError(function (err, context) {
-  console.log(err);       // [Error: uh oh]
-  console.log(context);   // {name: 'Jacob'}
-});
+seq.use((context, next) => {
+  console.log(context)           // {name: 'Julie'}
+  next(null, { name: 'Jacob' })  // can change the context of the next middleware
+})
 
-seq.fire({ name: 'Julie' });
+seq.use((context, next) => {
+  console.log(context)           // {name: 'Jacob'}
+  next(new Error('uh oh'), context)  // set error
+})
+
+seq.useOnError((err, context) => {
+  console.log(err)       // [Error: uh oh]
+  console.log(context)   // {name: 'Jacob'}
+})
+
+// trigger an event for middleware to process
+
+seq.fire({ name: 'Julie' })
 ```
